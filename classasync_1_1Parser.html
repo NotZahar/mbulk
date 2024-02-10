@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>multi_threaded_bulk: Класс async::Parser</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">multi_threaded_bulk
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Многопоточный вариант bulk</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceasync.html">async</a></li><li class="navelem"><a class="el" href="classasync_1_1Parser.html">Parser</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="classasync_1_1Parser-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс async::Parser</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="parser_8hpp_source.html">parser.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:ab48c01c86e809146ea7348350ca29b64"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1Parser.html#ab48c01c86e809146ea7348350ca29b64">expression</a> { <a class="el" href="classasync_1_1Parser.html#ab48c01c86e809146ea7348350ca29b64a2f1ebe77bca6ed5fadf405cf8fd7a5b0">openingBrace</a>
+, <a class="el" href="classasync_1_1Parser.html#ab48c01c86e809146ea7348350ca29b64a1d178f58015d8d8fa7ab28e7a150ef30">closingBrace</a>
+, <a class="el" href="classasync_1_1Parser.html#ab48c01c86e809146ea7348350ca29b64a1dccadfed7bcbb036c56a4afb97e906f">command</a>
+ }</td></tr>
+<tr class="separator:ab48c01c86e809146ea7348350ca29b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aceadc8e57cd75ba60a745af61bd65e64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1Parser.html#aceadc8e57cd75ba60a745af61bd65e64">Parser</a> ()=default</td></tr>
+<tr class="separator:aceadc8e57cd75ba60a745af61bd65e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef5887028e3bd5649960213c81455f4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1Parser.html#aef5887028e3bd5649960213c81455f4e">~Parser</a> ()=default</td></tr>
+<tr class="separator:aef5887028e3bd5649960213c81455f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a410cae123467a494b92696c977c86672"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classasync_1_1Parser.html#ab48c01c86e809146ea7348350ca29b64">expression</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1Parser.html#a410cae123467a494b92696c977c86672">identifyExpression</a> (const std::string_view string)</td></tr>
+<tr class="separator:a410cae123467a494b92696c977c86672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:ae1954c976b504f5160d2301fbe0ea55d"><td class="memItemLeft" align="right" valign="top">static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1Parser.html#ae1954c976b504f5160d2301fbe0ea55d">openingBraceTkn</a> = &quot;{&quot;</td></tr>
+<tr class="separator:ae1954c976b504f5160d2301fbe0ea55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b3b13549b2bef046f8b4f62a20f9057"><td class="memItemLeft" align="right" valign="top">static constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1Parser.html#a3b3b13549b2bef046f8b4f62a20f9057">closingBraceTkn</a> = &quot;}&quot;</td></tr>
+<tr class="separator:a3b3b13549b2bef046f8b4f62a20f9057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Перечисления</h2>
+<a id="ab48c01c86e809146ea7348350ca29b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48c01c86e809146ea7348350ca29b64">&#9670;&nbsp;</a></span>expression</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classasync_1_1Parser.html#ab48c01c86e809146ea7348350ca29b64">async::Parser::expression</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="ab48c01c86e809146ea7348350ca29b64a2f1ebe77bca6ed5fadf405cf8fd7a5b0"></a>openingBrace&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab48c01c86e809146ea7348350ca29b64a1d178f58015d8d8fa7ab28e7a150ef30"></a>closingBrace&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab48c01c86e809146ea7348350ca29b64a1dccadfed7bcbb036c56a4afb97e906f"></a>command&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aceadc8e57cd75ba60a745af61bd65e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceadc8e57cd75ba60a745af61bd65e64">&#9670;&nbsp;</a></span>Parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async::Parser::Parser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef5887028e3bd5649960213c81455f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef5887028e3bd5649960213c81455f4e">&#9670;&nbsp;</a></span>~Parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async::Parser::~Parser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a410cae123467a494b92696c977c86672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410cae123467a494b92696c977c86672">&#9670;&nbsp;</a></span>identifyExpression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classasync_1_1Parser.html#ab48c01c86e809146ea7348350ca29b64">Parser::expression</a> handler::Parser::identifyExpression </td>
+          <td>(</td>
+          <td class="paramtype">const std::string_view&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a3b3b13549b2bef046f8b4f62a20f9057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b3b13549b2bef046f8b4f62a20f9057">&#9670;&nbsp;</a></span>closingBraceTkn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::string_view async::Parser::closingBraceTkn = &quot;}&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1954c976b504f5160d2301fbe0ea55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1954c976b504f5160d2301fbe0ea55d">&#9670;&nbsp;</a></span>openingBraceTkn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::string_view async::Parser::openingBraceTkn = &quot;{&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>libs/async/src/<a class="el" href="parser_8hpp_source.html">parser.hpp</a></li>
+<li>libs/async/src/<a class="el" href="parser_8cpp.html">parser.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
