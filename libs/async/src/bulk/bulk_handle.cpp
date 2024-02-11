@@ -10,7 +10,7 @@ namespace async {
     {}
 
     void BulkHandle::receive(std::string expression) {
-        AsyncHandle::appendTask([this, expression] { // TODO: UB: this
+        AsyncHandle::appendTask([this, expression] {
             switch (Parser::identifyExpression(expression)) {
             case Parser::expression::openingBrace:
                 _sbulk.end();
@@ -35,8 +35,7 @@ namespace async {
     }
 
     void BulkHandle::endReceive() {
-        AsyncHandle::appendTask([this] { // TODO: UB: this
-            _sbulk.end();
-        });
+        AsyncHandle::appendTask([this] { _sbulk.end(); });
+        finish();
     }
 }

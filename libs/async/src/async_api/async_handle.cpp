@@ -16,5 +16,6 @@ namespace async {
 
     void AsyncHandle::finish() {
         _workGuardPtr->reset();
+        while (!_contextPtr->stopped());
     }
 }

@@ -16,7 +16,7 @@ namespace async {
         static std::string getNow() {
             const auto now = chrono::system_clock::now();
             return std::to_string(
-                chrono::duration_cast<chrono::seconds>(
+                chrono::duration_cast<chrono::milliseconds>(
                     now.time_since_epoch()
                 ).count()
             );

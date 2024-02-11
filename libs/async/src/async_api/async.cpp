@@ -15,7 +15,6 @@ namespace async {
     void disconnect(handle_t handle) {
         auto bulkHandle = reinterpret_cast<BulkHandle*>(handle);
         bulkHandle->endReceive();
-        bulkHandle->finish();
-        // delete bulkHandle;
+        delete bulkHandle;
     }
 }

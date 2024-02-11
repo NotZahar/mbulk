@@ -12,14 +12,14 @@ namespace async {
         AsyncHandle();
 
         virtual ~AsyncHandle() = default;
-        
-        void finish();
 
     protected:
         template <class Function>
         void appendTask(Function function) {
             asio::post(*_contextPtr, std::move(function));
         }
+
+        void finish();
 
     private:
         std::shared_ptr<asio::io_context> _contextPtr;
