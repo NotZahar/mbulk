@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['end_115',['end',['../classasync_1_1Batch.html#a37116a103ef323711f1edbe5d2e76be7',1,'async::Batch::end()'],['../classasync_1_1DBatch.html#a20f35d04e9179f918ee280d9f7004f7a',1,'async::DBatch::end()']]],
-  ['exec_116',['exec',['../classasync_1_1BulkHandler.html#a0c147945dc88f1ce8692f490f668157b',1,'async::BulkHandler::exec()'],['../classasync_1_1BulkRunner.html#ad7b3e5bda4d39b551389420b7f8b3c1c',1,'async::BulkRunner::exec()']]]
+  ['end_115',['end',['../classasync_1_1Bulk.html#afe32bb767332b2f6eb23f7a11ff5fb19',1,'async::Bulk::end()'],['../classasync_1_1DBulk.html#ac53f3d3bbf30fa35471a9f68d7509be8',1,'async::DBulk::end()']]],
+  ['endreceive_116',['endReceive',['../classasync_1_1BulkHandle.html#a8c416e51b2b1065c74970111dae7a677',1,'async::BulkHandle']]]
 ];

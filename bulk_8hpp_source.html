@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>multi_threaded_bulk: Исходный файл libs/async/src/bulk/bulk.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">multi_threaded_bulk
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Многопоточный вариант bulk</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_79bba60659425c9ed44771cd67b2faf5.html">async</a></li><li class="navelem"><a class="el" href="dir_cd1d8128a16886a13c21db3118d26802.html">src</a></li><li class="navelem"><a class="el" href="dir_3943704e474ae7bb72171cf3a3b7ba56.html">bulk</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">bulk.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="bulk_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logger_8hpp.html">logger.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_8hpp.html">helper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceasync.html">async</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classasync_1_1Bulk.html">Bulk</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#a3252eee30cf4f6aa59a68f50f4833c71">   14</a></span>&#160;        <a class="code" href="classasync_1_1Bulk.html#a3252eee30cf4f6aa59a68f50f4833c71">Bulk</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#adcb334af296697d1152a83b632f24537">   15</a></span>&#160;        <a class="code" href="classasync_1_1Bulk.html#adcb334af296697d1152a83b632f24537">Bulk</a>(std::size_t size)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            : <a class="code" href="classasync_1_1Bulk.html#a7b8b50af38f08410ae72c0a090b75fcd">_maxSize</a>(size)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#af9bf9d4cb22b031dd101d7d47bba413a">   19</a></span>&#160;        <a class="code" href="classasync_1_1Bulk.html#af9bf9d4cb22b031dd101d7d47bba413a">~Bulk</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#ad208a5ef3f5db0b66ef8e50776659cfe">   21</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classasync_1_1Bulk.html#ad208a5ef3f5db0b66ef8e50776659cfe">append</a>(T element) = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#afe32bb767332b2f6eb23f7a11ff5fb19">   23</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classasync_1_1Bulk.html#afe32bb767332b2f6eb23f7a11ff5fb19">end</a>() {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">_batch</a>.empty())</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> log = <a class="code" href="classasync_1_1Bulk.html#a4cb011a60a1e56d4e4cb00e987e9f176">serialize</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classasync_1_1Logger.html#a588e1c1f8bb8ee28c030b8d8ea1a214d">Logger::instance</a>().<a class="code" href="classasync_1_1Logger.html#a6f52fc5358508e2cd2ddb9e2c1dd5442">stdoutLog</a>(log);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classasync_1_1Logger.html#a588e1c1f8bb8ee28c030b8d8ea1a214d">Logger::instance</a>().<a class="code" href="classasync_1_1Logger.html#a796e2290b81838d8961ae4e698e9449d">fileLog</a>(log);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classasync_1_1Bulk.html#a7fd25784e7268ce4a6c85f3c5bacc329">clear</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#a7fd25784e7268ce4a6c85f3c5bacc329">   34</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classasync_1_1Bulk.html#a7fd25784e7268ce4a6c85f3c5bacc329">clear</a>() = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#a4cb011a60a1e56d4e4cb00e987e9f176">   36</a></span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="classasync_1_1Bulk.html#a4cb011a60a1e56d4e4cb00e987e9f176">serialize</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            std::string serializedBatch = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">_batch</a>.empty())</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span> serializedBatch;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            serializedBatch += <a class="code" href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">messages::BULK_CONTENT</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">auto</span> it = <a class="code" href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">_batch</a>.cbegin();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            serializedBatch += (<span class="stringliteral">&quot; &quot;</span> + *it);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">for</span> (++it; it != <a class="code" href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">_batch</a>.cend(); ++it)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                serializedBatch += (<span class="stringliteral">&quot;, &quot;</span> + *it);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> serializedBatch;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#a7b8b50af38f08410ae72c0a090b75fcd">   49</a></span>&#160;        <span class="keyword">const</span> std::size_t <a class="code" href="classasync_1_1Bulk.html#a7b8b50af38f08410ae72c0a090b75fcd">_maxSize</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">   50</a></span>&#160;        std::list&lt;T&gt; <a class="code" href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">_batch</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    };</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html">   54</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classasync_1_1DBulk.html">DBulk</a> : <span class="keyword">public</span> <a class="code" href="classasync_1_1Bulk.html">Bulk</a>&lt;T&gt; {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html#a9f3ab984ff0e619e3239e8eeeb0a9340">   56</a></span>&#160;        <a class="code" href="classasync_1_1DBulk.html#a9f3ab984ff0e619e3239e8eeeb0a9340">DBulk</a>(std::size_t size)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            : <a class="code" href="classasync_1_1Bulk.html">Bulk</a>&lt;T&gt;(size),</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;              _noNestingLevel(0),</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;              _nestingLevel(_noNestingLevel)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html#a65ad1994c9efd2fee0b383a5a82da517">   62</a></span>&#160;        <a class="code" href="classasync_1_1DBulk.html#a65ad1994c9efd2fee0b383a5a82da517">~DBulk</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html#a908e4ff7e32cf2d4c50c3393048b8d0d">   64</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classasync_1_1DBulk.html#a908e4ff7e32cf2d4c50c3393048b8d0d">append</a>(T element)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            assert(<a class="code" href="classasync_1_1DBulk.html#acef31fe53029d29cfde47779c9410b5f">blockExists</a>());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classasync_1_1Bulk.html">Bulk&lt;T&gt;::_batch</a>.push_back(element);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html#a1cb4f1b71ebab692d8be26b6a391b688">   69</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classasync_1_1DBulk.html#a1cb4f1b71ebab692d8be26b6a391b688">addBlock</a>() {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            _nestingLevel += 1;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html#acef31fe53029d29cfde47779c9410b5f">   73</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classasync_1_1DBulk.html#acef31fe53029d29cfde47779c9410b5f">blockExists</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> _nestingLevel != _noNestingLevel;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html#ac53f3d3bbf30fa35471a9f68d7509be8">   77</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classasync_1_1DBulk.html#ac53f3d3bbf30fa35471a9f68d7509be8">end</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classasync_1_1Bulk.html">Bulk&lt;T&gt;::_batch</a>.empty())</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            _nestingLevel -= 1;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classasync_1_1DBulk.html#acef31fe53029d29cfde47779c9410b5f">blockExists</a>()) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> log = <a class="code" href="classasync_1_1Bulk.html#a4cb011a60a1e56d4e4cb00e987e9f176">Bulk&lt;T&gt;::serialize</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="classasync_1_1Logger.html#a588e1c1f8bb8ee28c030b8d8ea1a214d">Logger::instance</a>().<a class="code" href="classasync_1_1Logger.html#a6f52fc5358508e2cd2ddb9e2c1dd5442">stdoutLog</a>(log);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="classasync_1_1Logger.html#a588e1c1f8bb8ee28c030b8d8ea1a214d">Logger::instance</a>().<a class="code" href="classasync_1_1Logger.html#a796e2290b81838d8961ae4e698e9449d">fileLog</a>(log);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="classasync_1_1DBulk.html#a4115f2316e14a6cb20d0e394f7f9d0d5">clear</a>();                </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classasync_1_1DBulk.html#a4115f2316e14a6cb20d0e394f7f9d0d5">   91</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classasync_1_1DBulk.html#a4115f2316e14a6cb20d0e394f7f9d0d5">clear</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classasync_1_1Bulk.html">Bulk&lt;T&gt;::_batch</a>.<a class="code" href="classasync_1_1Bulk.html#a7fd25784e7268ce4a6c85f3c5bacc329">clear</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            _nestingLevel = _noNestingLevel;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> _noNestingLevel;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">int</span> _nestingLevel;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    };</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classasync_1_1SBulk.html">  102</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classasync_1_1SBulk.html">SBulk</a> : <span class="keyword">public</span> <a class="code" href="classasync_1_1Bulk.html">Bulk</a>&lt;T&gt; {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classasync_1_1SBulk.html#a819f186a990a50abb1fdf1e224dec160">  104</a></span>&#160;        <a class="code" href="classasync_1_1SBulk.html#a819f186a990a50abb1fdf1e224dec160">SBulk</a>(std::size_t <a class="code" href="classasync_1_1SBulk.html#ac1f1ce7ce9944f6502f182fba9bf0f83">size</a>)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            : <a class="code" href="classasync_1_1Bulk.html">Bulk</a>&lt;T&gt;(<a class="code" href="classasync_1_1SBulk.html#ac1f1ce7ce9944f6502f182fba9bf0f83">size</a>)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classasync_1_1SBulk.html#ac876e55b798d065b7685db5d9de482f2">  108</a></span>&#160;        <a class="code" href="classasync_1_1SBulk.html#ac876e55b798d065b7685db5d9de482f2">~SBulk</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classasync_1_1SBulk.html#ac1f1ce7ce9944f6502f182fba9bf0f83">  110</a></span>&#160;        std::size_t <a class="code" href="classasync_1_1SBulk.html#ac1f1ce7ce9944f6502f182fba9bf0f83">size</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classasync_1_1Bulk.html">Bulk&lt;T&gt;::_batch</a>.size();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classasync_1_1SBulk.html#af4f1892604bad8770f5a66d54be817a6">  114</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classasync_1_1SBulk.html#af4f1892604bad8770f5a66d54be817a6">append</a>(T element)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            assert(<a class="code" href="classasync_1_1SBulk.html#ac1f1ce7ce9944f6502f182fba9bf0f83">size</a>() &lt; <a class="code" href="classasync_1_1Bulk.html">Bulk&lt;T&gt;::_maxSize</a>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="classasync_1_1Bulk.html">Bulk&lt;T&gt;::_batch</a>.push_back(element);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classasync_1_1SBulk.html#af3c3a41717f5661f53489697b3393acc">  120</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classasync_1_1SBulk.html#af3c3a41717f5661f53489697b3393acc">clear</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classasync_1_1Bulk.html">Bulk&lt;T&gt;::_batch</a>.<a class="code" href="classasync_1_1Bulk.html#a7fd25784e7268ce4a6c85f3c5bacc329">clear</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    };</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="ttc" id="aclassasync_1_1Bulk_html"><div class="ttname"><a href="classasync_1_1Bulk.html">async::Bulk</a></div><div class="ttdef"><b>Definition:</b> bulk.hpp:12</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_a3252eee30cf4f6aa59a68f50f4833c71"><div class="ttname"><a href="classasync_1_1Bulk.html#a3252eee30cf4f6aa59a68f50f4833c71">async::Bulk::Bulk</a></div><div class="ttdeci">Bulk()=delete</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_a39050a30a6faedf48e77c4719b6ce608"><div class="ttname"><a href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">async::Bulk::_batch</a></div><div class="ttdeci">std::list&lt; T &gt; _batch</div><div class="ttdef"><b>Definition:</b> bulk.hpp:50</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_a4cb011a60a1e56d4e4cb00e987e9f176"><div class="ttname"><a href="classasync_1_1Bulk.html#a4cb011a60a1e56d4e4cb00e987e9f176">async::Bulk::serialize</a></div><div class="ttdeci">virtual std::string serialize() const</div><div class="ttdef"><b>Definition:</b> bulk.hpp:36</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_a7b8b50af38f08410ae72c0a090b75fcd"><div class="ttname"><a href="classasync_1_1Bulk.html#a7b8b50af38f08410ae72c0a090b75fcd">async::Bulk::_maxSize</a></div><div class="ttdeci">const std::size_t _maxSize</div><div class="ttdef"><b>Definition:</b> bulk.hpp:49</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_a7fd25784e7268ce4a6c85f3c5bacc329"><div class="ttname"><a href="classasync_1_1Bulk.html#a7fd25784e7268ce4a6c85f3c5bacc329">async::Bulk::clear</a></div><div class="ttdeci">virtual void clear()=0</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_ad208a5ef3f5db0b66ef8e50776659cfe"><div class="ttname"><a href="classasync_1_1Bulk.html#ad208a5ef3f5db0b66ef8e50776659cfe">async::Bulk::append</a></div><div class="ttdeci">virtual void append(T element)=0</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_adcb334af296697d1152a83b632f24537"><div class="ttname"><a href="classasync_1_1Bulk.html#adcb334af296697d1152a83b632f24537">async::Bulk::Bulk</a></div><div class="ttdeci">Bulk(std::size_t size)</div><div class="ttdef"><b>Definition:</b> bulk.hpp:15</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_af9bf9d4cb22b031dd101d7d47bba413a"><div class="ttname"><a href="classasync_1_1Bulk.html#af9bf9d4cb22b031dd101d7d47bba413a">async::Bulk::~Bulk</a></div><div class="ttdeci">~Bulk()=default</div></div>
+<div class="ttc" id="aclassasync_1_1Bulk_html_afe32bb767332b2f6eb23f7a11ff5fb19"><div class="ttname"><a href="classasync_1_1Bulk.html#afe32bb767332b2f6eb23f7a11ff5fb19">async::Bulk::end</a></div><div class="ttdeci">virtual void end()</div><div class="ttdef"><b>Definition:</b> bulk.hpp:23</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html"><div class="ttname"><a href="classasync_1_1DBulk.html">async::DBulk</a></div><div class="ttdef"><b>Definition:</b> bulk.hpp:54</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html_a1cb4f1b71ebab692d8be26b6a391b688"><div class="ttname"><a href="classasync_1_1DBulk.html#a1cb4f1b71ebab692d8be26b6a391b688">async::DBulk::addBlock</a></div><div class="ttdeci">void addBlock()</div><div class="ttdef"><b>Definition:</b> bulk.hpp:69</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html_a4115f2316e14a6cb20d0e394f7f9d0d5"><div class="ttname"><a href="classasync_1_1DBulk.html#a4115f2316e14a6cb20d0e394f7f9d0d5">async::DBulk::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdef"><b>Definition:</b> bulk.hpp:91</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html_a65ad1994c9efd2fee0b383a5a82da517"><div class="ttname"><a href="classasync_1_1DBulk.html#a65ad1994c9efd2fee0b383a5a82da517">async::DBulk::~DBulk</a></div><div class="ttdeci">~DBulk()=default</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html_a908e4ff7e32cf2d4c50c3393048b8d0d"><div class="ttname"><a href="classasync_1_1DBulk.html#a908e4ff7e32cf2d4c50c3393048b8d0d">async::DBulk::append</a></div><div class="ttdeci">void append(T element) override</div><div class="ttdef"><b>Definition:</b> bulk.hpp:64</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html_a9f3ab984ff0e619e3239e8eeeb0a9340"><div class="ttname"><a href="classasync_1_1DBulk.html#a9f3ab984ff0e619e3239e8eeeb0a9340">async::DBulk::DBulk</a></div><div class="ttdeci">DBulk(std::size_t size)</div><div class="ttdef"><b>Definition:</b> bulk.hpp:56</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html_ac53f3d3bbf30fa35471a9f68d7509be8"><div class="ttname"><a href="classasync_1_1DBulk.html#ac53f3d3bbf30fa35471a9f68d7509be8">async::DBulk::end</a></div><div class="ttdeci">void end() override</div><div class="ttdef"><b>Definition:</b> bulk.hpp:77</div></div>
+<div class="ttc" id="aclassasync_1_1DBulk_html_acef31fe53029d29cfde47779c9410b5f"><div class="ttname"><a href="classasync_1_1DBulk.html#acef31fe53029d29cfde47779c9410b5f">async::DBulk::blockExists</a></div><div class="ttdeci">bool blockExists() const</div><div class="ttdef"><b>Definition:</b> bulk.hpp:73</div></div>
+<div class="ttc" id="aclassasync_1_1Logger_html_a588e1c1f8bb8ee28c030b8d8ea1a214d"><div class="ttname"><a href="classasync_1_1Logger.html#a588e1c1f8bb8ee28c030b8d8ea1a214d">async::Logger::instance</a></div><div class="ttdeci">static Logger &amp; instance()</div><div class="ttdef"><b>Definition:</b> logger.cpp:10</div></div>
+<div class="ttc" id="aclassasync_1_1Logger_html_a6f52fc5358508e2cd2ddb9e2c1dd5442"><div class="ttname"><a href="classasync_1_1Logger.html#a6f52fc5358508e2cd2ddb9e2c1dd5442">async::Logger::stdoutLog</a></div><div class="ttdeci">void stdoutLog(const std::string &amp;string) const</div><div class="ttdef"><b>Definition:</b> logger.cpp:15</div></div>
+<div class="ttc" id="aclassasync_1_1Logger_html_a796e2290b81838d8961ae4e698e9449d"><div class="ttname"><a href="classasync_1_1Logger.html#a796e2290b81838d8961ae4e698e9449d">async::Logger::fileLog</a></div><div class="ttdeci">void fileLog(const std::string &amp;string) const</div><div class="ttdef"><b>Definition:</b> logger.cpp:19</div></div>
+<div class="ttc" id="aclassasync_1_1SBulk_html"><div class="ttname"><a href="classasync_1_1SBulk.html">async::SBulk</a></div><div class="ttdef"><b>Definition:</b> bulk.hpp:102</div></div>
+<div class="ttc" id="aclassasync_1_1SBulk_html_a819f186a990a50abb1fdf1e224dec160"><div class="ttname"><a href="classasync_1_1SBulk.html#a819f186a990a50abb1fdf1e224dec160">async::SBulk::SBulk</a></div><div class="ttdeci">SBulk(std::size_t size)</div><div class="ttdef"><b>Definition:</b> bulk.hpp:104</div></div>
+<div class="ttc" id="aclassasync_1_1SBulk_html_ac1f1ce7ce9944f6502f182fba9bf0f83"><div class="ttname"><a href="classasync_1_1SBulk.html#ac1f1ce7ce9944f6502f182fba9bf0f83">async::SBulk::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdef"><b>Definition:</b> bulk.hpp:110</div></div>
+<div class="ttc" id="aclassasync_1_1SBulk_html_ac876e55b798d065b7685db5d9de482f2"><div class="ttname"><a href="classasync_1_1SBulk.html#ac876e55b798d065b7685db5d9de482f2">async::SBulk::~SBulk</a></div><div class="ttdeci">~SBulk()=default</div></div>
+<div class="ttc" id="aclassasync_1_1SBulk_html_af3c3a41717f5661f53489697b3393acc"><div class="ttname"><a href="classasync_1_1SBulk.html#af3c3a41717f5661f53489697b3393acc">async::SBulk::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdef"><b>Definition:</b> bulk.hpp:120</div></div>
+<div class="ttc" id="aclassasync_1_1SBulk_html_af4f1892604bad8770f5a66d54be817a6"><div class="ttname"><a href="classasync_1_1SBulk.html#af4f1892604bad8770f5a66d54be817a6">async::SBulk::append</a></div><div class="ttdeci">void append(T element) override</div><div class="ttdef"><b>Definition:</b> bulk.hpp:114</div></div>
+<div class="ttc" id="ahelper_8hpp_html"><div class="ttname"><a href="helper_8hpp.html">helper.hpp</a></div></div>
+<div class="ttc" id="alogger_8hpp_html"><div class="ttname"><a href="logger_8hpp.html">logger.hpp</a></div></div>
+<div class="ttc" id="anamespaceasync_html"><div class="ttname"><a href="namespaceasync.html">async</a></div><div class="ttdef"><b>Definition:</b> async.hpp:5</div></div>
+<div class="ttc" id="astructasync_1_1messages_html_a803f62087f6f1bc8dc92093ba382304b"><div class="ttname"><a href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">async::messages::BULK_CONTENT</a></div><div class="ttdeci">static const std::string BULK_CONTENT</div><div class="ttdef"><b>Definition:</b> helper.hpp:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

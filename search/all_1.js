@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['addblock_2',['addBlock',['../classasync_1_1DBatch.html#a2992c393b275e28c1402588f9d0d8f89',1,'async::DBatch']]],
-  ['append_3',['append',['../classasync_1_1Batch.html#af779f335da739ad7d175a44a93f22330',1,'async::Batch::append()'],['../classasync_1_1DBatch.html#a91deceb552205b76f8d1b159fdb05354',1,'async::DBatch::append()'],['../classasync_1_1SBatch.html#adbf5fa853dc6146fc2d0bf1cb4058c6e',1,'async::SBatch::append()']]],
+  ['addblock_2',['addBlock',['../classasync_1_1DBulk.html#a1cb4f1b71ebab692d8be26b6a391b688',1,'async::DBulk']]],
+  ['append_3',['append',['../classasync_1_1Bulk.html#ad208a5ef3f5db0b66ef8e50776659cfe',1,'async::Bulk::append()'],['../classasync_1_1DBulk.html#a908e4ff7e32cf2d4c50c3393048b8d0d',1,'async::DBulk::append()'],['../classasync_1_1SBulk.html#af4f1892604bad8770f5a66d54be817a6',1,'async::SBulk::append()']]],
   ['appendtask_4',['appendTask',['../classasync_1_1AsyncHandle.html#aea19c955a5ca833d7ba1d898c9deb72e',1,'async::AsyncHandle']]],
   ['appendthread_5',['appendThread',['../classasync_1_1AsyncHandleThreads.html#aa51d8d6f29801eb09ca9565fea5daf1e',1,'async::AsyncHandleThreads']]],
   ['async_6',['async',['../namespaceasync.html',1,'']]],
   ['async_2ecpp_7',['async.cpp',['../async_8cpp.html',1,'']]],
   ['async_2ehpp_8',['async.hpp',['../async_8hpp.html',1,'']]],
-  ['async_5fhandle_2ecpp_9',['async_handle.cpp',['../async_2async__handle_8cpp.html',1,'(Глобальное пространство имён)'],['../async__api_2async__handle_8cpp.html',1,'(Глобальное пространство имён)']]],
+  ['async_5fhandle_2ecpp_9',['async_handle.cpp',['../async__handle_8cpp.html',1,'']]],
   ['async_5fhandle_2ehpp_10',['async_handle.hpp',['../async__handle_8hpp.html',1,'']]],
   ['async_5fhandle_5fthreads_2ecpp_11',['async_handle_threads.cpp',['../async__handle__threads_8cpp.html',1,'']]],
   ['async_5fhandle_5fthreads_2ehpp_12',['async_handle_threads.hpp',['../async__handle__threads_8hpp.html',1,'']]],

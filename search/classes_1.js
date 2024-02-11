@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['batch_72',['Batch',['../classasync_1_1Batch.html',1,'async']]],
-  ['bulkhandler_73',['BulkHandler',['../classasync_1_1BulkHandler.html',1,'async']]],
-  ['bulkrunner_74',['BulkRunner',['../classasync_1_1BulkRunner.html',1,'async']]]
+  ['bulk_74',['Bulk',['../classasync_1_1Bulk.html',1,'async']]],
+  ['bulkhandle_75',['BulkHandle',['../classasync_1_1BulkHandle.html',1,'async']]]
 ];

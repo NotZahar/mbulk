@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['handle_5ft_36',['handle_t',['../namespaceasync.html#af4c6fcc783fdc77b350e4588b52776c0',1,'async']]],
-  ['handler_37',['handler',['../namespacehandler.html',1,'']]],
-  ['helper_2ehpp_38',['helper.hpp',['../helper_8hpp.html',1,'']]]
+  ['filelog_34',['fileLog',['../classasync_1_1Logger.html#a796e2290b81838d8961ae4e698e9449d',1,'async::Logger']]],
+  ['finish_35',['finish',['../classasync_1_1AsyncHandle.html#a9d268c42ae86083e55ac7acc1faa8109',1,'async::AsyncHandle']]]
 ];

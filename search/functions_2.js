@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['clear_111',['clear',['../classasync_1_1Batch.html#a60e51d3b737e05c451c3114b193addc1',1,'async::Batch::clear()'],['../classasync_1_1DBatch.html#a86d4994b986cf758092bf1ee6f85a6d4',1,'async::DBatch::clear()'],['../classasync_1_1SBatch.html#a33f15fdefade38ae3002d99c10ae8cf5',1,'async::SBatch::clear()']]],
+  ['clear_111',['clear',['../classasync_1_1Bulk.html#a7fd25784e7268ce4a6c85f3c5bacc329',1,'async::Bulk::clear()'],['../classasync_1_1DBulk.html#a4115f2316e14a6cb20d0e394f7f9d0d5',1,'async::DBulk::clear()'],['../classasync_1_1SBulk.html#af3c3a41717f5661f53489697b3393acc',1,'async::SBulk::clear()']]],
   ['connect_112',['connect',['../namespaceasync.html#a003d1a6899dca20ddcbff67a6abfb491',1,'async']]]
 ];

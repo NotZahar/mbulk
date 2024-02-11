@@ -69,6 +69,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
 <a href="classasync_1_1AsyncHandle-members.html">Полный список членов класса</a>  </div>
   <div class="headertitle">
 <div class="title">Класс async::AsyncHandle</div>  </div>
@@ -76,13 +77,27 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="async__handle_8hpp_source.html">async_handle.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:async::AsyncHandle:</div>
+<div class="dyncontent">
+<div class="center"><img src="classasync_1_1AsyncHandle__inherit__graph.png" border="0" usemap="#aasync_1_1AsyncHandle_inherit__map" alt="Inheritance graph"/></div>
+<map name="aasync_1_1AsyncHandle_inherit__map" id="aasync_1_1AsyncHandle_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,5,159,32"/>
+<area shape="rect" href="classasync_1_1BulkHandle.html" title=" " alt="" coords="11,80,153,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a2507d9b4984fcaff3e3b22e0c7cbc8bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1AsyncHandle.html#a2507d9b4984fcaff3e3b22e0c7cbc8bb">AsyncHandle</a> ()</td></tr>
 <tr class="separator:a2507d9b4984fcaff3e3b22e0c7cbc8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72e4f26d741e1ad0db112b8005c44615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1AsyncHandle.html#a72e4f26d741e1ad0db112b8005c44615">~AsyncHandle</a> ()</td></tr>
-<tr class="separator:a72e4f26d741e1ad0db112b8005c44615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e88f057ddbbc98c2475432f6d2ad03"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1AsyncHandle.html#a87e88f057ddbbc98c2475432f6d2ad03">~AsyncHandle</a> ()=default</td></tr>
+<tr class="separator:a87e88f057ddbbc98c2475432f6d2ad03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d268c42ae86083e55ac7acc1faa8109"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1AsyncHandle.html#a9d268c42ae86083e55ac7acc1faa8109">finish</a> ()</td></tr>
+<tr class="separator:a9d268c42ae86083e55ac7acc1faa8109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
 <tr class="memitem:aea19c955a5ca833d7ba1d898c9deb72e"><td class="memTemplParams" colspan="2">template&lt;class Function &gt; </td></tr>
 <tr class="memitem:aea19c955a5ca833d7ba1d898c9deb72e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classasync_1_1AsyncHandle.html#aea19c955a5ca833d7ba1d898c9deb72e">appendTask</a> (Function function)</td></tr>
 <tr class="separator:aea19c955a5ca833d7ba1d898c9deb72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,19 +120,27 @@ $(function() {
 
 </div>
 </div>
-<a id="a72e4f26d741e1ad0db112b8005c44615"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72e4f26d741e1ad0db112b8005c44615">&#9670;&nbsp;</a></span>~AsyncHandle()</h2>
+<a id="a87e88f057ddbbc98c2475432f6d2ad03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e88f057ddbbc98c2475432f6d2ad03">&#9670;&nbsp;</a></span>~AsyncHandle()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">async::AsyncHandle::~AsyncHandle </td>
+          <td class="memname">virtual async::AsyncHandle::~AsyncHandle </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -144,16 +167,33 @@ template&lt;class Function &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
+<a id="a9d268c42ae86083e55ac7acc1faa8109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d268c42ae86083e55ac7acc1faa8109">&#9670;&nbsp;</a></span>finish()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void async::AsyncHandle::finish </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
 <li>libs/async/src/async_api/<a class="el" href="async__handle_8hpp_source.html">async_handle.hpp</a></li>
-<li>libs/async/src/async_api/<a class="el" href="async__api_2async__handle_8cpp.html">async_handle.cpp</a></li>
+<li>libs/async/src/async_api/<a class="el" href="async__handle_8cpp.html">async_handle.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

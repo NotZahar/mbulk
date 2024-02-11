@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['log_119',['log',['../classasync_1_1Logger.html#a32397a00e46d3aa5af1bc8abc2323ff9',1,'async::Logger']]],
-  ['logger_120',['Logger',['../classasync_1_1Logger.html#ad3eeeee4763b50403315506e13ab8d67',1,'async::Logger::Logger(const Logger &amp;)=delete'],['../classasync_1_1Logger.html#a8559d98ada2a2dc514bf7e3f138235b3',1,'async::Logger::Logger(Logger &amp;&amp;)=delete']]]
+  ['getnow_119',['getNow',['../structasync_1_1utility.html#a7347307e8bc12b9942419596f0994ac3',1,'async::utility']]],
+  ['getuuid_120',['getUUID',['../structasync_1_1utility.html#a55586da0214d33382efe6a5918d43c7f',1,'async::utility']]]
 ];
