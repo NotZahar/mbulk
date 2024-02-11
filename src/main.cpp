@@ -5,52 +5,99 @@
 
 int main() {
     std::jthread thread1{[]() {
-        std::size_t bulk1 = 5; 
-        auto handle1 = async::connect(bulk1);
-        async::receive(handle1, "1", 10);
-        async::receive(handle1, "\n2\n3\n4\n5\n6\n{\na\n", 11);
-        async::receive(handle1, "b\nc\nd\n}\n89\n", 12);
-        async::receive(handle1, "b\nc\nd\n}\n89\n", 13);
-        async::receive(handle1, "b\nc\nd\n}\n89\n", 14);
-        async::disconnect(handle1);
+        std::size_t bulk = 3; 
+        auto handle = async::connect(bulk);
+        async::receive(handle, "cmd1 1", 6);
+        async::receive(handle, "cmd2 1", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd3 1", 6);
+        async::receive(handle, "cmd4 1", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd5 1", 6);
+        async::receive(handle, "cmd6 1", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd7 1", 6);
+        async::receive(handle, "cmd8 1", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "cmd9 1", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd10 1", 6);
+        async::receive(handle, "cmd11 1", 6);
+        async::disconnect(handle);
     }};
 
     std::jthread thread2{[]() { 
-        std::size_t bulk2 = 5;
-        auto handle2 = async::connect(bulk2);
-        async::receive(handle2, "1\n", 20);
-        async::disconnect(handle2);
+        std::size_t bulk = 3; 
+        auto handle = async::connect(bulk);
+        async::receive(handle, "cmd1 2", 6);
+        async::receive(handle, "cmd2 2", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd3 2", 6);
+        async::receive(handle, "cmd4 2", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd5 2", 6);
+        async::receive(handle, "cmd6 2", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd7 2", 6);
+        async::receive(handle, "cmd8 2", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "cmd9 2", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd10 2", 6);
+        async::receive(handle, "cmd11 2", 6);
+        async::disconnect(handle);
     }};
 
     std::jthread thread3{[]() {
-        std::size_t bulk3 = 5; 
-        auto handle3 = async::connect(bulk3);
-        async::receive(handle3, "1\n", 30);
-        async::disconnect(handle3);
+        std::size_t bulk = 3; 
+        auto handle = async::connect(bulk);
+        async::receive(handle, "cmd1 3", 6);
+        async::receive(handle, "cmd2 3", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd3 3", 6);
+        async::receive(handle, "cmd4 3", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd5 3", 6);
+        async::receive(handle, "cmd6 3", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd7 3", 6);
+        async::receive(handle, "cmd8 3", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "cmd9 3", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd10 3", 6);
+        async::receive(handle, "cmd11 3", 6);
+        async::disconnect(handle);
     }};
 
     std::jthread thread4{[]() {
-        std::size_t bulk4 = 5; 
-        auto handle4 = async::connect(bulk4);
-        async::receive(handle4, "1\n", 40);
-        async::receive(handle4, "1\n", 41);
-        async::receive(handle4, "1\n", 42);
-        async::receive(handle4, "1\n", 43);
-        async::disconnect(handle4);
-    }};
-
-    std::jthread thread5{[]() {
-        std::size_t bulk5 = 5; 
-        auto handle5 = async::connect(bulk5);
-        async::receive(handle5, "1\n", 50);
-        async::disconnect(handle5);
-    }};
-
-    std::jthread thread6{[]() {
-        std::size_t bulk6 = 5; 
-        auto handle6 = async::connect(bulk6);
-        async::receive(handle6, "1\n", 60);
-        async::disconnect(handle6);
+        std::size_t bulk = 3; 
+        auto handle = async::connect(bulk);
+        async::receive(handle, "cmd1 4", 6);
+        async::receive(handle, "cmd2 4", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd3 4", 6);
+        async::receive(handle, "cmd4 4", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd5 4", 6);
+        async::receive(handle, "cmd6 4", 6);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd7 4", 6);
+        async::receive(handle, "cmd8 4", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "cmd9 4", 6);
+        async::receive(handle, "}", 1);
+        async::receive(handle, "{", 1);
+        async::receive(handle, "cmd10 4", 6);
+        async::receive(handle, "cmd11 4", 6);
+        async::disconnect(handle);
     }};
 
     return 0;

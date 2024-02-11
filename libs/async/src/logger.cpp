@@ -6,17 +6,18 @@
 
 #include "helper.hpp"
 
-namespace handler {
+namespace async {
     Logger& Logger::instance() {
         static Logger instance;
         return instance;
     }
 
-    void Logger::log(const std::string& string) const {
+    void Logger::stdoutLog(const std::string& string) const {
         std::cout << string << '\n';
-        
-        const auto now = std::chrono::system_clock::now();
-        const auto logName = messages::BULK + std::to_string(std::chrono::duration_cast<std::chrono::seconds>(now.time_since_epoch()).count());
+    }
+    
+    void Logger::fileLog(const std::string& string) const {
+        const auto logName = messages::BULK + utility::getNow() + '_' + utility::getUUID();
         std::ofstream logFile(logName + messages::LOG_EXT);
         logFile << string << '\n';
         logFile.close();

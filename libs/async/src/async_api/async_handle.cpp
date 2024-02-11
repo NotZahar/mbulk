@@ -14,7 +14,7 @@ namespace async {
         );
     }
 
-    AsyncHandle::~AsyncHandle() {
+    void AsyncHandle::finish() {
         _workGuardPtr->reset();
     }
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <boost/asio/dispatch.hpp>
 #include <memory>
 
 #include <boost/asio.hpp>
@@ -12,8 +11,11 @@ namespace async {
     public:
         AsyncHandle();
 
-        ~AsyncHandle();
+        virtual ~AsyncHandle() = default;
+        
+        void finish();
 
+    protected:
         template <class Function>
         void appendTask(Function function) {
             asio::post(*_contextPtr, std::move(function));

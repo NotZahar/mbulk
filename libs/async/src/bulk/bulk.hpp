@@ -1,23 +1,22 @@
 #pragma once
 
-#include <iostream>
-#include <list>
-#include <memory>
+#include <cstddef>
 #include <cassert>
+#include <list>
 
 #include "logger.hpp"
 #include "helper.hpp"
 
 namespace async {
     template <class T>
-    class Batch {
+    class Bulk {
     public:
-        Batch() = delete;
-        Batch(int size)
+        Bulk() = delete;
+        Bulk(std::size_t size)
             : _maxSize(size)
         {}
 
-        ~Batch() = default;
+        ~Bulk() = default;
 
         virtual void append(T element) = 0;
         
@@ -25,7 +24,9 @@ namespace async {
             if (_batch.empty())
                 return;
 
-            Logger::instance().log(serialize());
+            const auto log = serialize();
+            Logger::instance().stdoutLog(log);
+            Logger::instance().fileLog(log);
             clear();
         }
 
@@ -45,24 +46,24 @@ namespace async {
             return serializedBatch;
         }
 
-        int _maxSize;
+        const std::size_t _maxSize;
         std::list<T> _batch;
     };
 
     template <class T>
-    class DBatch : public Batch<T> {
+    class DBulk : public Bulk<T> {
     public:
-        DBatch(int size)
-            : Batch<T>(size),
+        DBulk(std::size_t size)
+            : Bulk<T>(size),
               _noNestingLevel(0),
               _nestingLevel(_noNestingLevel)
         {}
 
-        ~DBatch() = default;
+        ~DBulk() = default;
         
         void append(T element) override {
             assert(blockExists());
-            Batch<T>::_batch.push_back(element);
+            Bulk<T>::_batch.push_back(element);
         }
 
         void addBlock() {
@@ -74,19 +75,21 @@ namespace async {
         }
 
         void end() override {
-            if (Batch<T>::_batch.empty())
+            if (Bulk<T>::_batch.empty())
                 return;
 
             _nestingLevel -= 1;
             if (!blockExists()) {
-                Logger::instance().log(Batch<T>::serialize());
+                const auto log = Bulk<T>::serialize();
+                Logger::instance().stdoutLog(log);
+                Logger::instance().fileLog(log);
                 clear();                
             }
         }
 
     protected:
         void clear() override {
-            Batch<T>::_batch.clear();
+            Bulk<T>::_batch.clear();
             _nestingLevel = _noNestingLevel;
         }
 
@@ -96,26 +99,26 @@ namespace async {
     };
     
     template <class T>
-    class SBatch : public Batch<T> {
+    class SBulk : public Bulk<T> {
     public:
-        SBatch(int size)
-            : Batch<T>(size)
+        SBulk(std::size_t size)
+            : Bulk<T>(size)
         {}
 
-        ~SBatch() = default;
+        ~SBulk() = default;
 
-        int size() const {
-            return Batch<T>::_batch.size();
+        std::size_t size() const {
+            return Bulk<T>::_batch.size();
         }
         
         void append(T element) override {
-            assert(size() < Batch<T>::_maxSize);
-            Batch<T>::_batch.push_back(element);
+            assert(size() < Bulk<T>::_maxSize);
+            Bulk<T>::_batch.push_back(element);
         }
 
     protected:
         void clear() override {
-            Batch<T>::_batch.clear();
+            Bulk<T>::_batch.clear();
         }
     };
 }

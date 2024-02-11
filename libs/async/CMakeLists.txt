@@ -16,6 +16,11 @@ target_sources(${PROJECT_NAME}
         src/async_api/async.cpp
         src/async_api/async_handle.cpp
         src/async_api/async_handle_threads.cpp
+        
+        src/bulk/bulk_handle.cpp
+        src/bulk/parser.cpp
+
+        src/logger.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

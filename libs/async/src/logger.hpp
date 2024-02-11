@@ -10,8 +10,9 @@ namespace async {
         Logger& operator=(Logger const&) = delete;
         Logger& operator=(Logger &&) = delete;
         
-        static Logger& instance();
-        void log(const std::string& string) const;
+        static Logger& instance();        
+        void stdoutLog(const std::string& string) const;
+        void fileLog(const std::string& string) const;
 
     private:
         Logger() = default;

@@ -1,29 +1,21 @@
 #include "async.hpp"
 
-#include <iostream>
-
-#include "async_handle.hpp"
+#include "../bulk/bulk_handle.hpp"
 
 namespace async {
-    handle_t connect(std::size_t /*bulk*/) {
-        return new AsyncHandle{};
+    handle_t connect(std::size_t bulk) {
+        return new BulkHandle{ bulk };
     }
 
-    void receive(handle_t handle, const char */*data*/, std::size_t size) {
-        auto asyncHandle = reinterpret_cast<AsyncHandle*>(handle);
-        asyncHandle->appendTask([size]() {
-            auto sum = 0ll;
-            for (long long i = 0; i < 100'000'000; ++i) {
-                sum += 1;
-            }
-
-            std::cout << sum << ' ' << size << '\n'; 
-        });
+    void receive(handle_t handle, const char* data, std::size_t size) {
+        auto bulkHandle = reinterpret_cast<BulkHandle*>(handle);
+        bulkHandle->receive(std::string(data, size));
     }
 
     void disconnect(handle_t handle) {
-        auto asyncHandle = reinterpret_cast<AsyncHandle*>(handle);
-        // std::cout << "delete\n";
-        delete asyncHandle;
+        auto bulkHandle = reinterpret_cast<BulkHandle*>(handle);
+        bulkHandle->endReceive();
+        bulkHandle->finish();
+        // delete bulkHandle;
     }
 }

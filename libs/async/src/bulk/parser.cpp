@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-namespace handler {
+namespace async {
     Parser::expression Parser::identifyExpression(const std::string_view string) {
         if (string == openingBraceTkn) {
             return expression::openingBrace;
