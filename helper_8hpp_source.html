@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structasync_1_1utility.html#a7347307e8bc12b9942419596f0994ac3">   16</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="structasync_1_1utility.html#a7347307e8bc12b9942419596f0994ac3">getNow</a>() {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> now = chrono::system_clock::now();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> std::to_string(</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                chrono::duration_cast&lt;chrono::seconds&gt;(</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                chrono::duration_cast&lt;chrono::milliseconds&gt;(</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    now.time_since_epoch()</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                ).count()</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            );</div>
