@@ -67,7 +67,18 @@ $(function() {
 <div class="title">Многопоточный вариант bulk </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Документация: <a href="https://notzahar.github.io/mbulk/">https://notzahar.github.io/mbulk/</a> </p>
+<div class="textblock"><h4><a class="anchor" id="autotoc_md1"></a>
+Install:</h4>
+<div class="fragment"><div class="line">sudo apt install ./mbulk-0.0.7-Linux.deb</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2"></a>
+Build:</h4>
+<div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
+<div class="line">cmake .. -DCMAKE_BUILD_TYPE=Release</div>
+<div class="line">cmake --build . --target install --parallel &lt;jobs&gt;</div>
+</div><!-- fragment --><p> <code>libasync.so</code>, <code><a class="el" href="async_8hpp.html">async.hpp</a></code>, <code>cmake</code>-файлы и пример <code>mbulk</code> находятся в <code>../install</code></p>
+<h4><a class="anchor" id="autotoc_md3"></a>
+Docs:</h4>
+<p><a href="https://notzahar.github.io/mbulk/">https://notzahar.github.io/mbulk/</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
