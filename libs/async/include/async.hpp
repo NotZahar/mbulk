@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+
 #include "../src/log_queue.hpp"
 
 namespace async {
