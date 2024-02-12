@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['parser_140',['Parser',['../classasync_1_1Parser.html#aceadc8e57cd75ba60a745af61bd65e64',1,'async::Parser']]]
+  ['receive_123',['receive',['../classasync_1_1BulkHandle.html#a1def073ccbf83c3f924c962fa23dceb4',1,'async::BulkHandle::receive()'],['../namespaceasync.html#aa1b54e89e951488a8dd79e720f3d8f8b',1,'async::receive()']]],
+  ['reset_124',['reset',['../classasync_1_1LogQueue.html#a48b3624e0215656cf8cb8e90b9f49b02',1,'async::LogQueue']]]
 ];
