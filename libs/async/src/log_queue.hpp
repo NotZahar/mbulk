@@ -17,7 +17,9 @@ namespace async {
 
         static void stdLog(const std::string& log);
         static void fileLog(const std::string& log);
+        static void reset();
 
+    private:
         static constexpr std::size_t _stdNumberOfThreads = 1;
         static constexpr std::size_t _fileNumberOfThreads = 2;
 
@@ -25,7 +27,7 @@ namespace async {
             _stdMutex, 
             _fileMutex;
         inline static asio::thread_pool 
-            _stdPool{ _stdNumberOfThreads }, 
-            _filePool{ _fileNumberOfThreads };
+            _stdQueue{ _stdNumberOfThreads }, 
+            _fileQueue{ _fileNumberOfThreads };
     };
 }

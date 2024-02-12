@@ -16,15 +16,12 @@ namespace async {
     protected:
         template <class Function>
         void appendTask(Function function) {
-            asio::post(*_contextPtr, std::move(function));
+            asio::post(_taskQueue, std::move(function));
         }
 
         void finish();
 
     private:
-        std::shared_ptr<asio::io_context> _contextPtr;
-        std::shared_ptr<
-                asio::executor_work_guard<decltype(_contextPtr->get_executor())>
-            > _workGuardPtr;
+        boost::asio::thread_pool _taskQueue;
     };
 }

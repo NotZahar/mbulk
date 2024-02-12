@@ -16,7 +16,6 @@ target_sources(${PROJECT_NAME}
         # async api
         src/async_api/async.cpp
         src/async_api/async_handle.cpp
-        src/async_api/async_handle_threads.cpp
         
         # bulk
         src/bulk/bulk_handle.cpp
