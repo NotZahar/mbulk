@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Function&gt;</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classasync_1_1AsyncHandleThreads.html#aa51d8d6f29801eb09ca9565fea5daf1e">   20</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classasync_1_1AsyncHandleThreads.html#aa51d8d6f29801eb09ca9565fea5daf1e">appendThread</a>(Function <span class="keyword">function</span>) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            std::lock_guard guard{ _mutex };</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            std::lock_guard lock{ _mutex };</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            _threads.create_thread(std::move(<span class="keyword">function</span>));</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>

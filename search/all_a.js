@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['log_5fext_42',['LOG_EXT',['../structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69',1,'async::messages']]],
-  ['logger_43',['Logger',['../classasync_1_1Logger.html',1,'async::Logger'],['../classasync_1_1Logger.html#ad3eeeee4763b50403315506e13ab8d67',1,'async::Logger::Logger(const Logger &amp;)=delete'],['../classasync_1_1Logger.html#a8559d98ada2a2dc514bf7e3f138235b3',1,'async::Logger::Logger(Logger &amp;&amp;)=delete']]],
-  ['logger_2ecpp_44',['logger.cpp',['../logger_8cpp.html',1,'']]],
-  ['logger_2ehpp_45',['logger.hpp',['../logger_8hpp.html',1,'']]]
+  ['main_53',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../mbulk_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;mbulk.cpp']]],
+  ['main_2ecpp_54',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mbulk_2ecpp_55',['mbulk.cpp',['../mbulk_8cpp.html',1,'']]],
+  ['messages_56',['messages',['../structasync_1_1messages.html',1,'async']]]
 ];

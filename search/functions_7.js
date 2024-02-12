@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['identifyexpression_121',['identifyExpression',['../classasync_1_1Parser.html#acefb102030ad178d81628a66715bb72e',1,'async::Parser']]],
-  ['instance_122',['instance',['../classasync_1_1AsyncHandleThreads.html#abc2c23be88a79584104f04c54dd6965a',1,'async::AsyncHandleThreads::instance()'],['../classasync_1_1Logger.html#a588e1c1f8bb8ee28c030b8d8ea1a214d',1,'async::Logger::instance()']]]
+  ['logger_135',['Logger',['../classasync_1_1Logger.html#a51f5f6b7c51f21a5d2b5e15afed9b521',1,'async::Logger']]],
+  ['logqueue_136',['LogQueue',['../classasync_1_1LogQueue.html#a9104f9e33ead0350e522cf9d247bfbb1',1,'async::LogQueue']]]
 ];

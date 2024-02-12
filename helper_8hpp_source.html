@@ -73,47 +73,48 @@ $(function() {
 <div class="contents">
 <a href="helper_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid.hpp&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid_generators.hpp&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid_io.hpp&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;boost/lexical_cast.hpp&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceasync.html">async</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">namespace </span>chrono = std::chrono;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">namespace </span>uuids = boost::uuids;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structasync_1_1utility.html">   15</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structasync_1_1utility.html">utility</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structasync_1_1utility.html#a7347307e8bc12b9942419596f0994ac3">   16</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="structasync_1_1utility.html#a7347307e8bc12b9942419596f0994ac3">getNow</a>() {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> now = chrono::system_clock::now();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> std::to_string(</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                chrono::duration_cast&lt;chrono::milliseconds&gt;(</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    now.time_since_epoch()</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                ).count()</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            );</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structasync_1_1utility.html#a55586da0214d33382efe6a5918d43c7f">   25</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="structasync_1_1utility.html#a55586da0214d33382efe6a5918d43c7f">getUUID</a>() {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> boost::lexical_cast&lt;std::string&gt;(uuids::random_generator()());</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html">   30</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structasync_1_1messages.html">messages</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html#aa400b48fdd447c36bcd1d25395fcb33c">   31</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structasync_1_1messages.html#aa400b48fdd447c36bcd1d25395fcb33c">BULK</a> = <span class="stringliteral">&quot;bulk&quot;</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">   32</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">BULK_CONTENT</a> = <span class="stringliteral">&quot;bulk:&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69">   33</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69">LOG_EXT</a> = <span class="stringliteral">&quot;.log&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid_generators.hpp&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid_io.hpp&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;boost/lexical_cast.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceasync.html">async</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">namespace </span>chrono = std::chrono;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">namespace </span>uuids = boost::uuids;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structasync_1_1utility.html">   16</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structasync_1_1utility.html">utility</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structasync_1_1utility.html#aaa8f6b37385e668baddd0e146f5430f0">   17</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="structasync_1_1utility.html#aaa8f6b37385e668baddd0e146f5430f0">now</a>() {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="structasync_1_1utility.html#aaa8f6b37385e668baddd0e146f5430f0">now</a> = chrono::system_clock::now();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">return</span> std::to_string(</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                chrono::duration_cast&lt;chrono::milliseconds&gt;(</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <a class="code" href="structasync_1_1utility.html#aaa8f6b37385e668baddd0e146f5430f0">now</a>.time_since_epoch()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                ).count()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structasync_1_1utility.html#a2b1a1d635d7a48ee7a97e1d52a381d86">   26</a></span>&#160;        <span class="keyword">static</span> std::string <a class="code" href="structasync_1_1utility.html#a2b1a1d635d7a48ee7a97e1d52a381d86">UUID</a>() {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> boost::lexical_cast&lt;std::string&gt;(uuids::random_generator()());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html">   31</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structasync_1_1messages.html">messages</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html#aa400b48fdd447c36bcd1d25395fcb33c">   32</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structasync_1_1messages.html#aa400b48fdd447c36bcd1d25395fcb33c">BULK</a> = <span class="stringliteral">&quot;bulk&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">   33</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">BULK_CONTENT</a> = <span class="stringliteral">&quot;bulk:&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69">   34</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69">LOG_EXT</a> = <span class="stringliteral">&quot;.log&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="ttc" id="anamespaceasync_html"><div class="ttname"><a href="namespaceasync.html">async</a></div><div class="ttdef"><b>Definition:</b> async.hpp:5</div></div>
-<div class="ttc" id="astructasync_1_1messages_html"><div class="ttname"><a href="structasync_1_1messages.html">async::messages</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:30</div></div>
-<div class="ttc" id="astructasync_1_1messages_html_a803f62087f6f1bc8dc92093ba382304b"><div class="ttname"><a href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">async::messages::BULK_CONTENT</a></div><div class="ttdeci">static const std::string BULK_CONTENT</div><div class="ttdef"><b>Definition:</b> helper.hpp:32</div></div>
-<div class="ttc" id="astructasync_1_1messages_html_aa400b48fdd447c36bcd1d25395fcb33c"><div class="ttname"><a href="structasync_1_1messages.html#aa400b48fdd447c36bcd1d25395fcb33c">async::messages::BULK</a></div><div class="ttdeci">static const std::string BULK</div><div class="ttdef"><b>Definition:</b> helper.hpp:31</div></div>
-<div class="ttc" id="astructasync_1_1messages_html_aebefecc5f2beee9aeaf9319225a24a69"><div class="ttname"><a href="structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69">async::messages::LOG_EXT</a></div><div class="ttdeci">static const std::string LOG_EXT</div><div class="ttdef"><b>Definition:</b> helper.hpp:33</div></div>
-<div class="ttc" id="astructasync_1_1utility_html"><div class="ttname"><a href="structasync_1_1utility.html">async::utility</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:15</div></div>
-<div class="ttc" id="astructasync_1_1utility_html_a55586da0214d33382efe6a5918d43c7f"><div class="ttname"><a href="structasync_1_1utility.html#a55586da0214d33382efe6a5918d43c7f">async::utility::getUUID</a></div><div class="ttdeci">static std::string getUUID()</div><div class="ttdef"><b>Definition:</b> helper.hpp:25</div></div>
-<div class="ttc" id="astructasync_1_1utility_html_a7347307e8bc12b9942419596f0994ac3"><div class="ttname"><a href="structasync_1_1utility.html#a7347307e8bc12b9942419596f0994ac3">async::utility::getNow</a></div><div class="ttdeci">static std::string getNow()</div><div class="ttdef"><b>Definition:</b> helper.hpp:16</div></div>
+<div class="ttc" id="astructasync_1_1messages_html"><div class="ttname"><a href="structasync_1_1messages.html">async::messages</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:31</div></div>
+<div class="ttc" id="astructasync_1_1messages_html_a803f62087f6f1bc8dc92093ba382304b"><div class="ttname"><a href="structasync_1_1messages.html#a803f62087f6f1bc8dc92093ba382304b">async::messages::BULK_CONTENT</a></div><div class="ttdeci">static const std::string BULK_CONTENT</div><div class="ttdef"><b>Definition:</b> helper.hpp:33</div></div>
+<div class="ttc" id="astructasync_1_1messages_html_aa400b48fdd447c36bcd1d25395fcb33c"><div class="ttname"><a href="structasync_1_1messages.html#aa400b48fdd447c36bcd1d25395fcb33c">async::messages::BULK</a></div><div class="ttdeci">static const std::string BULK</div><div class="ttdef"><b>Definition:</b> helper.hpp:32</div></div>
+<div class="ttc" id="astructasync_1_1messages_html_aebefecc5f2beee9aeaf9319225a24a69"><div class="ttname"><a href="structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69">async::messages::LOG_EXT</a></div><div class="ttdeci">static const std::string LOG_EXT</div><div class="ttdef"><b>Definition:</b> helper.hpp:34</div></div>
+<div class="ttc" id="astructasync_1_1utility_html"><div class="ttname"><a href="structasync_1_1utility.html">async::utility</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:16</div></div>
+<div class="ttc" id="astructasync_1_1utility_html_a2b1a1d635d7a48ee7a97e1d52a381d86"><div class="ttname"><a href="structasync_1_1utility.html#a2b1a1d635d7a48ee7a97e1d52a381d86">async::utility::UUID</a></div><div class="ttdeci">static std::string UUID()</div><div class="ttdef"><b>Definition:</b> helper.hpp:26</div></div>
+<div class="ttc" id="astructasync_1_1utility_html_aaa8f6b37385e668baddd0e146f5430f0"><div class="ttname"><a href="structasync_1_1utility.html#aaa8f6b37385e668baddd0e146f5430f0">async::utility::now</a></div><div class="ttdeci">static std::string now()</div><div class="ttdef"><b>Definition:</b> helper.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

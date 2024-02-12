@@ -69,8 +69,26 @@ $(function() {
 <li>_batch
 : <a class="el" href="classasync_1_1Bulk.html#a39050a30a6faedf48e77c4719b6ce608">async::Bulk&lt; T &gt;</a>
 </li>
+<li>_fileMutex
+: <a class="el" href="classasync_1_1LogQueue.html#ab81a7ee7d27be11a929cdddde951afde">async::LogQueue</a>
+</li>
+<li>_fileNumberOfThreads
+: <a class="el" href="classasync_1_1LogQueue.html#abc6d96b915ff7a59bdedf80ee6d400b8">async::LogQueue</a>
+</li>
+<li>_filePool
+: <a class="el" href="classasync_1_1LogQueue.html#a3dabafb239b9bd1bde9f1b4b4f386760">async::LogQueue</a>
+</li>
 <li>_maxSize
 : <a class="el" href="classasync_1_1Bulk.html#a7b8b50af38f08410ae72c0a090b75fcd">async::Bulk&lt; T &gt;</a>
+</li>
+<li>_stdMutex
+: <a class="el" href="classasync_1_1LogQueue.html#a75fdd968c587a09df8537f60ac940431">async::LogQueue</a>
+</li>
+<li>_stdNumberOfThreads
+: <a class="el" href="classasync_1_1LogQueue.html#a5d7c740cb4415b02764307d946b7a560">async::LogQueue</a>
+</li>
+<li>_stdPool
+: <a class="el" href="classasync_1_1LogQueue.html#ab1e2492b4ca5fa77752fe23f8b25ae93">async::LogQueue</a>
 </li>
 </ul>
 
@@ -153,20 +171,11 @@ $(function() {
 
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>fileLog()
-: <a class="el" href="classasync_1_1Logger.html#a796e2290b81838d8961ae4e698e9449d">async::Logger</a>
+: <a class="el" href="classasync_1_1Logger.html#a2b81deb9bd47b70410f3746e62397208">async::Logger</a>
+, <a class="el" href="classasync_1_1LogQueue.html#a6984dd6c81b0539c86660bfe3293af4b">async::LogQueue</a>
 </li>
 <li>finish()
 : <a class="el" href="classasync_1_1AsyncHandle.html#a9d268c42ae86083e55ac7acc1faa8109">async::AsyncHandle</a>
-</li>
-</ul>
-
-
-<h3><a id="index_g"></a>- g -</h3><ul>
-<li>getNow()
-: <a class="el" href="structasync_1_1utility.html#a7347307e8bc12b9942419596f0994ac3">async::utility</a>
-</li>
-<li>getUUID()
-: <a class="el" href="structasync_1_1utility.html#a55586da0214d33382efe6a5918d43c7f">async::utility</a>
 </li>
 </ul>
 
@@ -177,7 +186,6 @@ $(function() {
 </li>
 <li>instance()
 : <a class="el" href="classasync_1_1AsyncHandleThreads.html#abc2c23be88a79584104f04c54dd6965a">async::AsyncHandleThreads</a>
-, <a class="el" href="classasync_1_1Logger.html#a588e1c1f8bb8ee28c030b8d8ea1a214d">async::Logger</a>
 </li>
 </ul>
 
@@ -187,7 +195,17 @@ $(function() {
 : <a class="el" href="structasync_1_1messages.html#aebefecc5f2beee9aeaf9319225a24a69">async::messages</a>
 </li>
 <li>Logger()
-: <a class="el" href="classasync_1_1Logger.html#ad3eeeee4763b50403315506e13ab8d67">async::Logger</a>
+: <a class="el" href="classasync_1_1Logger.html#a51f5f6b7c51f21a5d2b5e15afed9b521">async::Logger</a>
+</li>
+<li>LogQueue()
+: <a class="el" href="classasync_1_1LogQueue.html#a9104f9e33ead0350e522cf9d247bfbb1">async::LogQueue</a>
+</li>
+</ul>
+
+
+<h3><a id="index_n"></a>- n -</h3><ul>
+<li>now()
+: <a class="el" href="structasync_1_1utility.html#aaa8f6b37385e668baddd0e146f5430f0">async::utility</a>
 </li>
 </ul>
 
@@ -198,7 +216,6 @@ $(function() {
 </li>
 <li>operator=()
 : <a class="el" href="classasync_1_1AsyncHandleThreads.html#ac06c7cf190b085aeef21e2c607536887">async::AsyncHandleThreads</a>
-, <a class="el" href="classasync_1_1Logger.html#a8bf72eb816897394cf2030554e3fd25a">async::Logger</a>
 </li>
 </ul>
 
@@ -227,8 +244,16 @@ $(function() {
 <li>size()
 : <a class="el" href="classasync_1_1SBulk.html#ac1f1ce7ce9944f6502f182fba9bf0f83">async::SBulk&lt; T &gt;</a>
 </li>
-<li>stdoutLog()
-: <a class="el" href="classasync_1_1Logger.html#a6f52fc5358508e2cd2ddb9e2c1dd5442">async::Logger</a>
+<li>stdLog()
+: <a class="el" href="classasync_1_1Logger.html#aa6d7566314cf316e853bc67971d779c0">async::Logger</a>
+, <a class="el" href="classasync_1_1LogQueue.html#aedfc9dcaf10b0166886a8d6156ee993e">async::LogQueue</a>
+</li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
+<li>UUID()
+: <a class="el" href="structasync_1_1utility.html#a2b1a1d635d7a48ee7a97e1d52a381d86">async::utility</a>
 </li>
 </ul>
 
@@ -238,19 +263,25 @@ $(function() {
 : <a class="el" href="classasync_1_1AsyncHandle.html#a87e88f057ddbbc98c2475432f6d2ad03">async::AsyncHandle</a>
 </li>
 <li>~Bulk()
-: <a class="el" href="classasync_1_1Bulk.html#af9bf9d4cb22b031dd101d7d47bba413a">async::Bulk&lt; T &gt;</a>
+: <a class="el" href="classasync_1_1Bulk.html#aaf838c44e4c0330f01fb1275181d7f20">async::Bulk&lt; T &gt;</a>
 </li>
 <li>~BulkHandle()
 : <a class="el" href="classasync_1_1BulkHandle.html#a4d7a4a30c639991d2a9f7f983baeaa4f">async::BulkHandle</a>
 </li>
 <li>~DBulk()
-: <a class="el" href="classasync_1_1DBulk.html#a65ad1994c9efd2fee0b383a5a82da517">async::DBulk&lt; T &gt;</a>
+: <a class="el" href="classasync_1_1DBulk.html#a62d2087f064c5c3028af3d4ff7f2a322">async::DBulk&lt; T &gt;</a>
+</li>
+<li>~Logger()
+: <a class="el" href="classasync_1_1Logger.html#afa8a11315a916bc6c16a06f8fd144df8">async::Logger</a>
+</li>
+<li>~LogQueue()
+: <a class="el" href="classasync_1_1LogQueue.html#aee82c6bf62ac5720392159798f0241bb">async::LogQueue</a>
 </li>
 <li>~Parser()
 : <a class="el" href="classasync_1_1Parser.html#aef5887028e3bd5649960213c81455f4e">async::Parser</a>
 </li>
 <li>~SBulk()
-: <a class="el" href="classasync_1_1SBulk.html#ac876e55b798d065b7685db5d9de482f2">async::SBulk&lt; T &gt;</a>
+: <a class="el" href="classasync_1_1SBulk.html#a6b7a0b858aa73a4aef6d139b72d345ff">async::SBulk&lt; T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

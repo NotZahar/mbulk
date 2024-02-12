@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>multi_threaded_bulk: Класс async::LogQueue</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">multi_threaded_bulk
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Многопоточный вариант bulk</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceasync.html">async</a></li><li class="navelem"><a class="el" href="classasync_1_1LogQueue.html">LogQueue</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="classasync_1_1LogQueue-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс async::LogQueue</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="log__queue_8hpp_source.html">log_queue.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a9104f9e33ead0350e522cf9d247bfbb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#a9104f9e33ead0350e522cf9d247bfbb1">LogQueue</a> ()=default</td></tr>
+<tr class="separator:a9104f9e33ead0350e522cf9d247bfbb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee82c6bf62ac5720392159798f0241bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#aee82c6bf62ac5720392159798f0241bb">~LogQueue</a> ()=default</td></tr>
+<tr class="separator:aee82c6bf62ac5720392159798f0241bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:aedfc9dcaf10b0166886a8d6156ee993e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#aedfc9dcaf10b0166886a8d6156ee993e">stdLog</a> (const std::string &amp;log)</td></tr>
+<tr class="separator:aedfc9dcaf10b0166886a8d6156ee993e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6984dd6c81b0539c86660bfe3293af4b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#a6984dd6c81b0539c86660bfe3293af4b">fileLog</a> (const std::string &amp;log)</td></tr>
+<tr class="separator:a6984dd6c81b0539c86660bfe3293af4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:a5d7c740cb4415b02764307d946b7a560"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#a5d7c740cb4415b02764307d946b7a560">_stdNumberOfThreads</a> = 1</td></tr>
+<tr class="separator:a5d7c740cb4415b02764307d946b7a560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6d96b915ff7a59bdedf80ee6d400b8"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#abc6d96b915ff7a59bdedf80ee6d400b8">_fileNumberOfThreads</a> = 2</td></tr>
+<tr class="separator:abc6d96b915ff7a59bdedf80ee6d400b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75fdd968c587a09df8537f60ac940431"><td class="memItemLeft" align="right" valign="top">static std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#a75fdd968c587a09df8537f60ac940431">_stdMutex</a></td></tr>
+<tr class="separator:a75fdd968c587a09df8537f60ac940431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81a7ee7d27be11a929cdddde951afde"><td class="memItemLeft" align="right" valign="top">static std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#ab81a7ee7d27be11a929cdddde951afde">_fileMutex</a></td></tr>
+<tr class="separator:ab81a7ee7d27be11a929cdddde951afde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e2492b4ca5fa77752fe23f8b25ae93"><td class="memItemLeft" align="right" valign="top">static asio::thread_pool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#ab1e2492b4ca5fa77752fe23f8b25ae93">_stdPool</a> { <a class="el" href="classasync_1_1LogQueue.html#a5d7c740cb4415b02764307d946b7a560">_stdNumberOfThreads</a> }</td></tr>
+<tr class="separator:ab1e2492b4ca5fa77752fe23f8b25ae93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dabafb239b9bd1bde9f1b4b4f386760"><td class="memItemLeft" align="right" valign="top">static asio::thread_pool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasync_1_1LogQueue.html#a3dabafb239b9bd1bde9f1b4b4f386760">_filePool</a> { <a class="el" href="classasync_1_1LogQueue.html#abc6d96b915ff7a59bdedf80ee6d400b8">_fileNumberOfThreads</a> }</td></tr>
+<tr class="separator:a3dabafb239b9bd1bde9f1b4b4f386760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a9104f9e33ead0350e522cf9d247bfbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9104f9e33ead0350e522cf9d247bfbb1">&#9670;&nbsp;</a></span>LogQueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async::LogQueue::LogQueue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee82c6bf62ac5720392159798f0241bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee82c6bf62ac5720392159798f0241bb">&#9670;&nbsp;</a></span>~LogQueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async::LogQueue::~LogQueue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a6984dd6c81b0539c86660bfe3293af4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6984dd6c81b0539c86660bfe3293af4b">&#9670;&nbsp;</a></span>fileLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void async::LogQueue::fileLog </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>log</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedfc9dcaf10b0166886a8d6156ee993e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedfc9dcaf10b0166886a8d6156ee993e">&#9670;&nbsp;</a></span>stdLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void async::LogQueue::stdLog </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>log</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="ab81a7ee7d27be11a929cdddde951afde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81a7ee7d27be11a929cdddde951afde">&#9670;&nbsp;</a></span>_fileMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex async::LogQueue::_fileMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc6d96b915ff7a59bdedf80ee6d400b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc6d96b915ff7a59bdedf80ee6d400b8">&#9670;&nbsp;</a></span>_fileNumberOfThreads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t async::LogQueue::_fileNumberOfThreads = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3dabafb239b9bd1bde9f1b4b4f386760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dabafb239b9bd1bde9f1b4b4f386760">&#9670;&nbsp;</a></span>_filePool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asio::thread_pool async::LogQueue::_filePool { <a class="el" href="classasync_1_1LogQueue.html#abc6d96b915ff7a59bdedf80ee6d400b8">_fileNumberOfThreads</a> }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75fdd968c587a09df8537f60ac940431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75fdd968c587a09df8537f60ac940431">&#9670;&nbsp;</a></span>_stdMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex async::LogQueue::_stdMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d7c740cb4415b02764307d946b7a560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d7c740cb4415b02764307d946b7a560">&#9670;&nbsp;</a></span>_stdNumberOfThreads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t async::LogQueue::_stdNumberOfThreads = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1e2492b4ca5fa77752fe23f8b25ae93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1e2492b4ca5fa77752fe23f8b25ae93">&#9670;&nbsp;</a></span>_stdPool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">asio::thread_pool async::LogQueue::_stdPool { <a class="el" href="classasync_1_1LogQueue.html#a5d7c740cb4415b02764307d946b7a560">_stdNumberOfThreads</a> }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>libs/async/src/<a class="el" href="log__queue_8hpp_source.html">log_queue.hpp</a></li>
+<li>libs/async/src/<a class="el" href="log__queue_8cpp.html">log_queue.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
