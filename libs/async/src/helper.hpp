@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 #include <string>
 #include <chrono>
 
@@ -13,7 +14,7 @@ namespace async {
     namespace uuids = boost::uuids;
 
     struct utility {
-        static std::string getNow() {
+        static std::string now() {
             const auto now = chrono::system_clock::now();
             return std::to_string(
                 chrono::duration_cast<chrono::milliseconds>(
@@ -22,7 +23,7 @@ namespace async {
             );
         }
         
-        static std::string getUUID() {
+        static std::string UUID() {
             return boost::lexical_cast<std::string>(uuids::random_generator()());
         }
     };

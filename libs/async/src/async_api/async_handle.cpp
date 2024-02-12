@@ -10,7 +10,7 @@ namespace async {
                 asio::executor_work_guard<decltype(_contextPtr->get_executor())>
             >(_contextPtr->get_executor());
         AsyncHandleThreads::instance().appendThread(
-            [contextPtr = _contextPtr] { contextPtr->run(); }
+            [this] { _contextPtr->run(); }
         );
     }
 

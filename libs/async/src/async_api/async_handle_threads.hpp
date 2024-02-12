@@ -18,7 +18,7 @@ namespace async {
 
         template <class Function>
         void appendThread(Function function) {
-            std::lock_guard guard{ _mutex };
+            std::lock_guard lock{ _mutex };
             _threads.create_thread(std::move(function));
         }
 

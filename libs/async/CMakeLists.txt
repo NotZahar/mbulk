@@ -13,13 +13,17 @@ add_library(${PROJECT_NAME} SHARED)
 
 target_sources(${PROJECT_NAME}
     PRIVATE
+        # async api
         src/async_api/async.cpp
         src/async_api/async_handle.cpp
         src/async_api/async_handle_threads.cpp
         
+        # bulk
         src/bulk/bulk_handle.cpp
         src/bulk/parser.cpp
 
+        # utility
+        src/log_queue.cpp
         src/logger.cpp
 )
 

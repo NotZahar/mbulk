@@ -4,7 +4,7 @@
 #include <cassert>
 #include <list>
 
-#include "logger.hpp"
+#include "../log_queue.hpp"
 #include "helper.hpp"
 
 namespace async {
@@ -16,7 +16,7 @@ namespace async {
             : _maxSize(size)
         {}
 
-        ~Bulk() = default;
+        virtual ~Bulk() = default;
 
         virtual void append(T element) = 0;
         
@@ -25,8 +25,8 @@ namespace async {
                 return;
 
             const auto log = serialize();
-            Logger::instance().stdoutLog(log);
-            Logger::instance().fileLog(log);
+            LogQueue::stdLog(log);
+            LogQueue::fileLog(log);
             clear();
         }
 
@@ -59,7 +59,7 @@ namespace async {
               _nestingLevel(_noNestingLevel)
         {}
 
-        ~DBulk() = default;
+        ~DBulk() override = default;
         
         void append(T element) override {
             assert(blockExists());
@@ -81,9 +81,9 @@ namespace async {
             _nestingLevel -= 1;
             if (!blockExists()) {
                 const auto log = Bulk<T>::serialize();
-                Logger::instance().stdoutLog(log);
-                Logger::instance().fileLog(log);
-                clear();                
+                LogQueue::stdLog(log);
+                LogQueue::fileLog(log);
+                clear();          
             }
         }
 
@@ -105,7 +105,7 @@ namespace async {
             : Bulk<T>(size)
         {}
 
-        ~SBulk() = default;
+        ~SBulk() override = default;
 
         std::size_t size() const {
             return Bulk<T>::_batch.size();
