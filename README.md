@@ -2,7 +2,7 @@
 
 ##### Install:
 ```
-sudo apt install ./mbulk-0.0.7-Linux.deb
+sudo apt install ./mbulk-0.0.<version>-Linux.deb
 ```
 
 ##### Build:
